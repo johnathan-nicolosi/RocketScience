@@ -11,7 +11,7 @@
 
 from bs4 import BeautifulSoup
 import requests
-soup= BeautifulSoup(html, 'html5lib')
+soup = BeautifulSoup(html, 'html5lib')
 
 ###################################################################################################################################
 #                                                                                                                                 #
