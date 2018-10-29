@@ -16,16 +16,17 @@ import datetime
 # To add current date to file extension
 dt = str(datetime.date.today())
 
-###################################################################################################################################
-#                                                                                                                                 #
-# We will pull two-line element data for the NOAA and GOES weather tracking satellites as well as the International Space Station #
-#                                                                                                                                 #
-###################################################################################################################################
+####################################################################################################################
+#                                                                                                                  #
+# Pull two-line element data for the NOAA and GOES weather tracking satellites and the International Space Station #
+#                                                                                                                  #
+####################################################################################################################
 
 
 # Let us begin by pulling TLE data for all of the Geostationary Operational Environmental Satellite (GOES)
 # Request data from www.celestrack.com
-def goes_tle():
+
+def current_goes_tle():
     html = requests.get("https://www.celestrak.com/NORAD/elements/goes.txt").text
     soup = BeautifulSoup(html, 'html5lib')
     # Convert data to string
@@ -35,11 +36,15 @@ def goes_tle():
     # Writes tle data as a string to the open text file
     goes.write(goes_tle)
     goes.close()
-goes_tle()
+
+
+current_goes_tle()
+
 
 # Next we will pull TLE data for all of the Polar Operational Environmental Satellites (POES/NOAA)
 # Request data from www.celestrack.com
-def noaa_tle():
+
+def current_noaa_tle():
     html = requests.get("https://www.celestrak.com/NORAD/elements/noaa.txt").text
     # Convert data to string
     noaa_tle = str(html)
@@ -48,11 +53,15 @@ def noaa_tle():
     # Writes tle data as a string to the open text file
     noaa.write(noaa_tle)
     noaa.close()
-noaa_tle()
+
+
+current_noaa_tle()
+
 
 # Lastly we will pull TLE data on the International Space Station (ISS)
 # Request data from www.celestrack.com
-def iss_tle():
+
+def current_iss_tle():
     html = requests.get("https://www.celestrak.com/satcat/tle.php?CATNR=25544").text
     soup = BeautifulSoup(html, 'html5lib')
     body = soup.pre.text
@@ -63,4 +72,6 @@ def iss_tle():
     # Writes tle data as a string to the open text file
     iss.write(iss_tle)
     iss.close()
-iss_tle()
+
+
+current_iss_tle()
