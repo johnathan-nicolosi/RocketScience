@@ -11,25 +11,25 @@ import matplotlib.pyplot as plt
 ################################
 #       Rocket Comparison      #
 ################################
-rockets = ['Saturn V', 'Atlas V', 'Delta II', 'Black Brant IV', 'Falcon 9']
-thrust = [7891000, 22300, 107000, 25000, 1710000]
-height = [111, 62.5, 37.8, 5.3, 70]
-diameter = [10, 3.81, 2.4, 0.44, 3.7]
-stages = [3, 2, 2, 2, 2]
-mass = [2840622, 21173, 231870, 1265, 549054]
-attributes = ['Height (h):', 'Diameter (d):', 'Thrust (t):', 'Stages (s):', 'Mass (m):']
+rockets = ['Ariane 5', 'Atlas V', 'Black Brant IV', 'Delta II', 'Delta IV', 'Falcon 9', 'Saturn V']
+height = [46, 58.3, 11.06, 37.8, 63, 70, 110.6] # meters
+diameter = [5.4, 3.81, 0.44, 2.4, 5, 3.7, 10] # meters
+thrust = [220000, 860000, 24953, 237000, 705000, 1710000, 7891000] # lbf
+mass = [777000, 334500, 1356, 151700, 249500, 549054, 2840622] # kg
+stages = [2, 2, 2, 2, 2, 2, 3]
+attributes = ['Height (h):', 'Diameter (d):', 'Thrust (t):', 'Mass (m):', 'Stages (s):']
 
 
 ################################
-#           Saturn V           #
+#           Ariane 5           #
 ################################
-def saturn_v():
-    h = 111  # meters
-    d = 10  # meters
-    t = 7891000  # lbf
-    s = 3  # stages
-    m = 2840622  # kg
-    rocket = [h, d, t, s, m]
+def ariane_5():
+    h = 46  # meters
+    d = 5.4  # meters
+    t = 220000  # lbf
+    m = 777000  # kg
+    s = 2  # stages
+    rocket = [h, d, t, m, s]
     print(rockets[0])
     print(attributes[0], rocket[0])
     print(attributes[1], rocket[1])
@@ -37,21 +37,18 @@ def saturn_v():
     print(attributes[3], rocket[3])
     print(attributes[4], rocket[4])
     print("")
-
-
-saturn_v()
-
+ariane_5()
 
 ################################
 #           Atlas V            #
 ################################
 def atlas_v():
-    h = 62.5  # meters
+    h = 58.3  # meters
     d = 3.81  # meters
-    t = 22300  # lbf
+    t = 860000  # lbf
+    m = 334500  # kg
     s = 2
-    m = 21173  # kg
-    rocket = [h, d, t, s, m]
+    rocket = [h, d, t, m, s]
     print(rockets[1])
     print(attributes[0], rocket[0])
     print(attributes[1], rocket[1])
@@ -59,10 +56,26 @@ def atlas_v():
     print(attributes[3], rocket[3])
     print(attributes[4], rocket[4])
     print("")
-
-
 atlas_v()
 
+################################
+#        Black Brant IV        #
+################################
+def black_brant_iv():
+    h = 11.06  # meters
+    d = 0.44  # meters
+    t = 24953  # lbf
+    m = 1356  # kg
+    s = 2
+    rocket = [h, d, t, m, s]
+    print(rockets[0])
+    print(attributes[0], rocket[0])
+    print(attributes[1], rocket[1])
+    print(attributes[2], rocket[2])
+    print(attributes[3], rocket[3])
+    print(attributes[4], rocket[4])
+    print("")
+black_brant_iv()
 
 ################################
 #           Detla II           #
@@ -70,10 +83,10 @@ atlas_v()
 def delta_ii():
     h = 37.8  # meters
     d = 2.4  # meters
-    t = 107000  # lbf
+    t = 237000  # lbf
+    m = 151700  # kg
     s = 2  # or 3
-    m = 231870  # kg
-    rocket = [h, d, t, s, m]
+    rocket = [h, d, t, m, s]
     print(rockets[0])
     print(attributes[0], rocket[0])
     print(attributes[1], rocket[1])
@@ -81,21 +94,18 @@ def delta_ii():
     print(attributes[3], rocket[3])
     print(attributes[4], rocket[4])
     print("")
-
-
 delta_ii()
 
-
 ################################
-#        Black Brant IV        #
+#           Detla IV           #
 ################################
-def black_brant_iv():
-    h = 5.3  # meters
-    d = 0.44  # meters
-    t = 25000  # lbf
+def delta_iv():
+    h = 63  # meters
+    d = 5  # meters
+    t = 705000  # lbf
+    m = 249500  # kg
     s = 2
-    m = 1265  # kg
-    rocket = [h, d, t, s, m]
+    rocket = [h, d, t, m, s]
     print(rockets[0])
     print(attributes[0], rocket[0])
     print(attributes[1], rocket[1])
@@ -103,10 +113,7 @@ def black_brant_iv():
     print(attributes[3], rocket[3])
     print(attributes[4], rocket[4])
     print("")
-
-
-black_brant_iv()
-
+delta_iv()
 
 ################################
 #           Falcon 9           #
@@ -115,9 +122,9 @@ def falcon_9():
     h = 70  # meters
     d = 3.7  # meters
     t = 1710000  # lbf
-    s = 2
     m = 549054  # kg
-    rocket = [h, d, t, s, m]
+    s = 2
+    rocket = [h, d, t, m, s]
     print(rockets[0])
     print(attributes[0], rocket[0])
     print(attributes[1], rocket[1])
@@ -125,9 +132,27 @@ def falcon_9():
     print(attributes[3], rocket[3])
     print(attributes[4], rocket[4])
     print("")
-
-
 falcon_9()
+
+################################
+#           Saturn V           #
+################################
+def saturn_v():
+    h = 110.6  # meters
+    d = 10  # meters
+    t = 7891000  # lbf
+    m = 2840622  # kg
+    s = 3  # stages
+    rocket = [h, d, t, m, s]
+    print(rockets[0])
+    print(attributes[0], rocket[0])
+    print(attributes[1], rocket[1])
+    print(attributes[2], rocket[2])
+    print(attributes[3], rocket[3])
+    print(attributes[4], rocket[4])
+    print("")
+saturn_v()
+
 
 #################################
 # Plotting Figures (Matplotlib) #
@@ -152,5 +177,15 @@ plt.ylabel('Mass (kg)')
 plt.subplot(212)
 plt.bar(rockets, thrust)
 plt.ylabel('Thrust (lbf)')
+
+plt.figure(3)
+plt.subplot(311)
+plt.title('Height Vs Stages')
+plt.bar(rockets, height)
+plt.ylabel('Height (m)')
+
+plt.subplot(312)
+plt.bar(rockets, stages)
+plt.ylabel('Stages')
 
 plt.show()
