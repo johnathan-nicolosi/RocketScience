@@ -24,18 +24,12 @@ attributes = ['Height (h):', 'Diameter (d):', 'Thrust (t):', 'Mass (m):', 'Stage
 #           Ariane 5           #
 ################################
 def ariane_5():
-    h = 46  # meters
-    d = 5.4  # meters
-    t = 220000  # lbf
-    m = 777000  # kg
-    s = 2  # stages
-    rocket = [h, d, t, m, s]
     print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(attributes[0], height[0], "(m)")
+    print(attributes[1], diameter[0], "(m)")
+    print(attributes[2], thrust[0], "(lbf)")
+    print(attributes[3], mass[0], "(kg)")
+    print(attributes[4], stages[0])
     print("")
 ariane_5()
 
@@ -43,18 +37,12 @@ ariane_5()
 #           Atlas V            #
 ################################
 def atlas_v():
-    h = 58.3  # meters
-    d = 3.81  # meters
-    t = 860000  # lbf
-    m = 334500  # kg
-    s = 2
-    rocket = [h, d, t, m, s]
     print(rockets[1])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(attributes[0], height[1], "(m)")
+    print(attributes[1], diameter[1], "(m)")
+    print(attributes[2], thrust[1], "(lbf)")
+    print(attributes[3], mass[1], "(kg)")
+    print(attributes[4], stages[1])
     print("")
 atlas_v()
 
@@ -62,18 +50,12 @@ atlas_v()
 #        Black Brant IV        #
 ################################
 def black_brant_iv():
-    h = 11.06  # meters
-    d = 0.44  # meters
-    t = 24953  # lbf
-    m = 1356  # kg
-    s = 2
-    rocket = [h, d, t, m, s]
-    print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(rockets[2])
+    print(attributes[0], height[2], "(m)")
+    print(attributes[1], diameter[2], "(m)")
+    print(attributes[2], thrust[2], "(lbf)")
+    print(attributes[3], mass[2], "(kg)")
+    print(attributes[4], stages[2])
     print("")
 black_brant_iv()
 
@@ -81,18 +63,12 @@ black_brant_iv()
 #           Detla II           #
 ################################
 def delta_ii():
-    h = 37.8  # meters
-    d = 2.4  # meters
-    t = 237000  # lbf
-    m = 151700  # kg
-    s = 2  # or 3
-    rocket = [h, d, t, m, s]
-    print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(rockets[3])
+    print(attributes[0], height[3], "(m)")
+    print(attributes[1], diameter[3], "(m)")
+    print(attributes[2], thrust[3], "(lbf)")
+    print(attributes[3], mass[3], "(kg)")
+    print(attributes[4], stages[3])
     print("")
 delta_ii()
 
@@ -100,18 +76,12 @@ delta_ii()
 #           Detla IV           #
 ################################
 def delta_iv():
-    h = 63  # meters
-    d = 5  # meters
-    t = 705000  # lbf
-    m = 249500  # kg
-    s = 2
-    rocket = [h, d, t, m, s]
-    print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(rockets[4])
+    print(attributes[0], height[4], "(m)")
+    print(attributes[1], diameter[4], "(m)")
+    print(attributes[2], thrust[4], "(lbf)")
+    print(attributes[3], mass[4], "(kg)")
+    print(attributes[4], stages[4])
     print("")
 delta_iv()
 
@@ -119,18 +89,12 @@ delta_iv()
 #           Falcon 9           #
 ################################
 def falcon_9():
-    h = 70  # meters
-    d = 3.7  # meters
-    t = 1710000  # lbf
-    m = 549054  # kg
-    s = 2
-    rocket = [h, d, t, m, s]
-    print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(rockets[5])
+    print(attributes[0], height[5], "(m)")
+    print(attributes[1], diameter[5], "(m)")
+    print(attributes[2], thrust[5], "(lbf)")
+    print(attributes[3], mass[5], "(kg)")
+    print(attributes[4], stages[5])
     print("")
 falcon_9()
 
@@ -138,18 +102,12 @@ falcon_9()
 #           Saturn V           #
 ################################
 def saturn_v():
-    h = 110.6  # meters
-    d = 10  # meters
-    t = 7891000  # lbf
-    m = 2840622  # kg
-    s = 3  # stages
-    rocket = [h, d, t, m, s]
-    print(rockets[0])
-    print(attributes[0], rocket[0])
-    print(attributes[1], rocket[1])
-    print(attributes[2], rocket[2])
-    print(attributes[3], rocket[3])
-    print(attributes[4], rocket[4])
+    print(rockets[6])
+    print(attributes[0], height[6], "(m)")
+    print(attributes[1], diameter[6], "(m)")
+    print(attributes[2], thrust[6], "(lbf)")
+    print(attributes[3], mass[6], "(kg)")
+    print(attributes[4], stages[6])
     print("")
 saturn_v()
 
@@ -178,14 +136,8 @@ plt.subplot(212)
 plt.bar(rockets, thrust)
 plt.ylabel('Thrust (lbf)')
 
-plt.figure(3)
-plt.subplot(311)
-plt.title('Height Vs Stages')
-plt.bar(rockets, height)
-plt.ylabel('Height (m)')
-
-plt.subplot(312)
-plt.bar(rockets, stages)
-plt.ylabel('Stages')
+# This section turns off scientific notation
+ax = plt.gca()
+ax.get_yaxis().get_major_formatter().set_scientific(False)
 
 plt.show()
