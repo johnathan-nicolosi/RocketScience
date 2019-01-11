@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8"/>
+
+<head><title>Space Science Blog - Rocket Propulsion</title>
+
+<meta http-equiv="Content-Language" content="English" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="Johnatan Nicolosi" />
+<meta name="description" content="Space Science Blog - Rocket Propulsion Using PythonS." />
+<meta name="keywords" content="space science blog, spacescienceblog, johnathan nicolosi, jonathan nicolosi, science, technology, design, artificial intelligence, programming, tutorial, rocket science, planetary weight calculator, mass, universal gravitational constant, sun, mercury, venus, earth, moon, mars, jupiter, saturn, neptune, uranus, gravity, gravitational parameter, gravitational acceleration, radius, gravitational forces " />
+<meta name="Robots" content="index,follow" />
+<link rel="stylesheet" type="text/css" href="../../../style.css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss/" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-97991852-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+// When the user scrolls down 150px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+<div class="content">
+<div id="top">
+<h1><a href="http://spacescienceblog.com" style="text-decoration:none;">Space Science Blog</a></h1>
+<h2>Bringing You The Future Of Science and Technology</h2>
+</div>
+<!-- end of the Top part --></div>
+<div id="prec">
+<div id="wrap">
+<div id="pic">
+<div id="slogan">
+<h1>ROCKET PROPULSION</h1><br />	
+<h2>This tutorial will focus on the fundamental elements of rocket propulsion systems and how we can use the Python programming language to compute these elements. </h2>
+</div>
+</div>
+<div id="menu">
+<iframe src="../../../top-menu.html" height="300px" width="180px" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+</div>
+<div class="content">
+<div> 
+<center>
+	<h3><a href="../artificial-intelligence.html" title="Artificial Intelligence">Artificial Intelligence</a> |
+	<a href="../diy-electronics-projects.html" title="DIY Electronics Projects">DIY Electronics Projects</a> | 
+	<a href="../../game-design/game-design-workshop.html" title="Game Design Workshop">Game Design Workshop</a> |
+	<a href="../../generators.html" title="Random Generators">Random Generators</a> | 
+	<a href="../planetary-science.html" title="Planetary Science">Planetary Science</a> | 
+	<a href="../rocket-science.html" title="Rocket Science" class="active">Rocket Science</a> </h3><br />
+</center>
+</div>
+<div id="main">
+<div id="right_side">
+<h3>Categories</h3>
+
+<iframe src="../../../categories.html"  height="200px" width="100%" frameborder="0" scrolling="no" ></iframe>
+
+<h3>Art and Web Design</h3>
+<p><a href="../../../contact.html">Contact me</a> for information about rates and availability.</p><br />
+<h3>Latest Articles</h3>
+<iframe src="../../latest-articles.html"  height="200px" width="100%" frameborder="0" scrolling="no" ></iframe>
+</div>
+<div id="left_side">
+<h3>&nbsp;<i class="fa fa-fw fa-rocket"></i><span>Rocket Propulsion Using Python</span></h3><br />
+<p>
+In this tutorial we will focus on the fundamental elements of various rocket propulsion systems and learn how we can use the Python programming language to compute these elements. We will focus on the Ariane 5, Atlas V and Saturn V rocket engines. In our analysis we will consider both the liquid propellant rocket engines and solid propellant rocket boosters used in each of the rockets listed above. <br /><br />
+We will begin with a brief discussion on the fundamental elements of rocket propulsion and then we will attempt to calculate these elements using Python. For starters, rocket propulsion is a class of jet propulsion that produces thrust by ejecting liquid or solid matter stored within the rocket, which is called the propellant. 
+<br /><br />
+This tutorial focuses on chemical rocket engines. These types of engines derive energy from a high-pressure combustion reaction of propellant chemicals, typically a fuel and an oxidizer, which is heated to very high temperatures (4500 to 7400&deg;F) and subsequently expanded in a nozzle and accelerated to high velocities (1800 to 4300 m/sec). Liquid rocket engines can be started and shut off at will. With solid propellant rocket motors, common on booster rockets, the propellant to be burned is contained within the combustion chamber and once ignited, will burn smoothly at a predetermined rate. Once ignited, solid propellant rockets cannot be shut off.
+
+</p><br /><br />
+
+<h3>&nbsp;<i class="fa fa-fw fa-rocket"></i><span>Definitions and Equations</span></h3><br />
+<p style="font-size:1.3em"><strong>Rocket Propulsion Elements:</strong></p>
+<div style="padding-left:20px; font-size:1.2em">
+<a href="#specific-impulse">Specific Impulse</a><br />
+<a href="#effective-exhaust-velocity">Effective Exhaust Velocity</a><br />
+<a href="#mass-flow-rate">Mass Flow Rate</a><br />
+<a href="#thrust">Thrust</a><br />
+<a href="#thrust-weight-ratio">Thrust-to-Weight Ratio</a><br />
+<a href="#mass-ratio">Mass Ratio</a><br />
+<a href="#propellant-mass-fraction">Propellant Mass Fraction</a><br />
+</div>
+<br />
+<p>
+<span id="specific-impulse">Specific impulse</span> (I<sub>s</sub>) represents the total impulse per unit weight of propellant. The specific impulse of a rocket propellant provides a rough measurement of how fast the propellant is ejected out of the back of the rocket. A higher number indicates better performance.
+<br /><br />
+I<sub>s</sub> = c / g<sub>0</sub> = F / &#7745; * g<sub>0</sub>
+<br /><br /><br />
+
+<span id="effective-exhaust-velocity">Effective exhause velocity</span> (c) is a measure of the average equivalent velocity at which propellant is ejected from the rocket nozzle. It is measured in meters per second, and like specific impulse, the effective exhaust velocity can be used as a measure of rocket performance.
+<br /><br />
+c = I<sub>s</sub> * g<sub>0</sub> = F / &#7745;
+<br /><br /><br />
+
+<span id="mass-flow-rate">Mass flow rate</span> (&#7745;) describes the rate at which a mass of propellant passes through the rockets exhaust nozzel, per unit of time (kg/sec). 
+<br /><br />
+&#7745; = (m<sub>0</sub> - m<sub>f</sub>) / t<sub>b</sub> = F / I<sub>s</sub> * g<sub>0</sub>
+<br /><br /><br />
+
+<span id="thrust">Thrust</span> (F) is the force produced by a rocket propulsion system acting upon a rocket. Thrust occurs when mass, in the form of a chemical propellant, is ejected from the rockets thrust chamber through its exhaust nozzel.
+<br /><br />
+F = I<sub>s</sub> * &#7745; * g<sub>0</sub> = c * &#7745;
+<br /><br /><br />
+
+<span id="thrust-weight-ratio">Thrust-to-weight ratio</span> (F / w<sub>0</sub>) expresses the acceleration that the engine is capable of giving to its own loaded propulsion system mass. For a constant thrust, the maximum value of the thrust-to-weight ratio, or maximum acceleration, occurs right before termination or burnout because the vehicle mass has been diminished by the mass of useful propellant, which has been expelled.
+<br /><br />
+
+<span id="mass-ratio">Mass ratio</span> (M<sub>R</sub>) is another measure of the efficiency of a rocket propulsion system. It is defined to be the final mass (m<sub>f</sub>) of the rocket divided by its initial mass (m<sub>0</sub>). This ratio describes how much more massive the rocket is with the added propellant than it is without propellant, that is the rocket's <i>wet mass</i> versus its <i>dry mass</i>. More efficient rocket propulsion systems require less propellant to achieve a given goal, therefore a lower mass ratio indicates higher performance.
+<br /><br />
+M<sub>R</sub> = m<sub>f</sub> / m<sub>0</sub>
+<br /><br /><br />
+
+<span id="propellant-mass-fraction">Propellant mass fraction</span> (&zeta;) indicates the fraction of propellant mass (m<sub>p</sub>) in an initial mass (m<sub>0</sub>). It can be applied to the entire rocket, or each stage of the rocket's propulsion system.
+<br /><br />
+&zeta; = m<sub>p</sub> / m<sub>0</sub> = (m<sub>0</sub> - m<sub>f</sub>) / m<sub>0</sub> = m<sub>p</sub> / (m<sub>p</sub> + m<sub>f</sub>)
+<br /> 
+</p>
+<br /><br />
+
+<h3>&nbsp;<i class="fa fa-fw fa-rocket"></i><span>Propulsion System Data for Three Major Launch Vehicles</span></h3><br />
+<p>
+In order to test the above equations, we will focus on three major space launch vehicles: the <a href="https://en.wikipedia.org/wiki/Ariane_5" alt="Wikipedia - Ariane 5" target="new">Ariane 5</a>, <a href="https://en.wikipedia.org/wiki/Atlas_V" alt="Wikipedia - Atlas V" target="new">Atlas V</a> and <a href="https://en.wikipedia.org/wiki/Saturn_V" alt="Wikipedia - Saturn V" target="new">Saturn V</a>. More specifically, we will take a closer look at their propulsion systems and compare the performance of each stage to determine which vehicle has the best propulsion systems. Before we compare each propulsion system, we need to collect some baseline data on each vehicle. For this purpose, I used Wikipedia to collected the following data.</p>
+<br /><br />
+<table style="width: 65%; padding-left: 25px;">
+	<caption><strong>Propulsion System Data for Major Launch Vehicles</strong></caption>
+	<tr>
+		<th scope="col" style="text-align: left">Vehicle</th>
+		<th scope="col">Propulsion<br />System</th>
+		<th scope="col">Stage</th>
+		<th scope="col">Thrust</th>
+		<th scope="col">Specific<br />Impulse</th>
+		<th scope="col">Burn<br />Time</th>
+		<th scope="col">Initial<br />Mass</th>
+		<th scope="col">Final<br />Mass</th>
+	</tr>
+	<tr>
+		<td>Ariane 5</td>
+		<td style="text-align:center">EAP P241</td>
+		<td style="text-align:center">Booster</td>
+		<td style="text-align:center">7,080,000 N</td>
+		<td style="text-align:center">274.5 s</td>
+		<td style="text-align:center">140 s</td>
+		<td style="text-align:center">301,000 kg</td>
+		<td style="text-align:center">36,000 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">EPC H173</td>
+		<td style="text-align:center">First</td>
+		<td style="text-align:center">960,000 N</td>
+		<td style="text-align:center">310 s</td>
+		<td style="text-align:center">540 s</td>
+		<td style="text-align:center">19,440 kg</td>
+		<td style="text-align:center">4,540 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">ESC-A</td>
+		<td style="text-align:center">Second</td>
+		<td style="text-align:center">67,000 N</td>
+		<td style="text-align:center">446 s</td>
+		<td style="text-align:center">945 s</td>
+		<td style="text-align:center">184,700 kg</td>
+		<td style="text-align:center">14,700 kg</td>
+	</tr>
+	
+	<tr>
+		<td>Atlas V</td>
+		<td style="text-align:center">AJ-60A</td>
+		<td style="text-align:center">Booster</td>
+		<td style="text-align:center">1,688,400 N</td>
+		<td style="text-align:center">279 s</td>
+		<td style="text-align:center">94 s</td>
+		<td style="text-align:center">46,697 kg</td>
+		<td style="text-align:center">4,067 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">Atlas CCB</td>
+		<td style="text-align:center">First</td>
+		<td style="text-align:center">3,827,000 N</td>
+		<td style="text-align:center">311.3 s</td>
+		<td style="text-align:center">253 s</td>
+		<td style="text-align:center">305,143 kg</td>
+		<td style="text-align:center">21,054 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">Centaur</td>
+		<td style="text-align:center">Second</td>
+		<td style="text-align:center">99,200 N</td>
+		<td style="text-align:center">450.5 s</td>
+		<td style="text-align:center">842 s</td>
+		<td style="text-align:center">23,146 kg</td>
+		<td style="text-align:center">2,316 kg</td>
+	</tr>
+	
+	<tr>
+		<td>Saturn V</td>
+		<td style="text-align:center">S-IC</td>
+		<td style="text-align:center">First</td>
+		<td style="text-align:center">35,100,000 N</td>
+		<td style="text-align:center">263 s</td>
+		<td style="text-align:center">168</td>
+		<td style="text-align:center">2,290,000 kg</td>
+		<td style="text-align:center">130,000 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">S-II</td>
+		<td style="text-align:center">Second</td>
+		<td style="text-align:center">5,141,000 N</td>
+		<td style="text-align:center">421 s</td>
+		<td style="text-align:center">360 s</td>
+		<td style="text-align:center">496,200 kg</td>
+		<td style="text-align:center">40,100 kg</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td style="text-align:center">S-IVB</td>
+		<td style="text-align:center">Third</td>
+		<td style="text-align:center">1,000,000 N</td>
+		<td style="text-align:center">421 s</td>
+		<td style="text-align:center">165 s</td>
+		<td style="text-align:center">123,000 kg</td>
+		<td style="text-align:center">13,500 kg</td>
+	</tr>
+</table>
+<br /><br />
+<p>
+Using the above data we can begin our calculations. 
+Note that the calculations for the boosters and first stage propulsion systems will assume gravitational acceleration at sea level. Second and third stage propulsion systems can be calculated using the gravitational acceleration at altitudes higher than sea level. For more information on the effects of altitude on gravity, see my article <a href="../planetary-science/gravity-altitude.html" alt="Effects of Gracity at Altitude">Effects of Gravity at Altitude</a>. For gravitational acceleration at sea level, the following equation may be used.
+<br /><br />
+g<sub>0</sub> = G * M<sub>e</sub> / R<sub>e</sub><sup>2</sup><br />
+g<sub>0</sub> = 6.67408<sup>-11</sup> * 5.98<sup>24</sup> / 6378.8<sup>2</sup><br />
+g<sub>0</sub> = 9.81 m/sec<sup>2</sup>
+<br /><br />
+Since we already have the thrust and specific impulse variables for each propulsion system, we can use these numbers to verify our calculations. Let's begin by calculating the mass flow rate (&#7745;) in Python, as this variable can be used in many other equations. Since we will be comparing multiple rocket propulsion systems, it is more efficient to create a list of lists for each rocket propulsion element that we will be investigating.
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> G = 6.67408 * 10**-11  # Universal gravitational constant
+>>> mass_earth = 5.98 * 10**24  # mass of Earth in kilograms
+>>> radius_earth = 6378.8 * 10**3  # distance from center of Earth to its surface, converted to meters
+>>> gravity_earth = G * mass_earth / radius_earth**2  # calculates gravitational acceleration at sea level
+>>> ariane_5 = [
+...    ["Eap P241", "Booster", 7080000, 274.5, 140, 301000, 36000],
+...    ["EPC H173", "First", 960000, 310, 540, 184700, 14700],
+...    ["ESC-A", "Second", 67000, 446, 945, 19440, 4540]
+...]
+>>> atlas_v = [
+...    ["AJ-60A", "Booster", 1688400, 279, 94, 46697, 4067],
+...    ["Atlas CCB", "First", 3827000, 311.3, 253, 305143, 21054],
+...    ["Centaur", "Second", 99200, 450.5, 842, 23146, 2316]
+...]
+>>> saturn_v = [
+...     ["S-IC", "First", 35100000, 263, 168, 2290000, 130000],
+...     ["S-II", "Second", 5141000, 421, 360, 496200, 40100],
+...     ["S-IVB", "Third", 1000000, 421, 165, 123000, 13500]
+... ]
+</p>
+</pre>
+</code>
+</div><br />
+<p>
+Now we can calculate mass flow rate using the information defined in our lists. For example, to calculate the mass flow rate for the Ariane 5 booster rocket we can retrieve individual data elements for thrust and specific impulse from our list by using index values (ariane_5[0][2]) and (ariane_5[0][3]), respectively. 
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> mass_flow_rate = ariane_5[0][2] / (ariane_5[0][3] * gravity_earth)
+>>> mass_flow_rate
+2629.1895745948987
+</p>
+</pre>
+</code>
+</div><br />
+<p>
+With the mass flow rate and thrust variables we can now calculate the effective exhaust velocity. We do this by dividing thrust by mass flow rate. Note, we can also calculate the effective exhaust veolity by multiplying the specific impulse by the gravitational acceleration. 
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> effective_exhaust_velocity = ariane_5[0][2] / mass_flow_rate
+>>> effective_exhaust_velocity
+2692.8450000000003
+>>> effective_exhaust_velocity = ariane_5[0][3] * gravity_earth
+>>> effective_exhaust_velocity
+2692.8450000000003
+</p>
+</pre>
+</code>
+</div><br />
+<p>
+Now we can use both the mass flow rate and effective exhaust velocity to calculate thrust, which we will verify using the information obtained from the internet.
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> thrust = effective_exhaust_velocity * mass_flow_rate
+>>> thrust
+7079897
+</p>
+</pre>
+</code>
+</div><br />
+<p>
+We can also calculate the specific impulse and compare it to what we collected from Wikipedia. We have a couple of equations that will give us specific impulse. The first equation uses the effective exhaust velocity that we just calculated, the other uses the mass flow rate. 
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> specific_impulse = effective_exhaust_velocity / g0
+>>> specific_impulse
+274.5158002038736
+>>> specific_impulse = ariane_5[0][2] / mass_flow_rate * gravity_earth
+>>> specific_impulse
+274.51979392403945
+</p>
+</pre>
+</code>
+</div><br />	
+<p>
+Using the initial mass and final mass of the rocket propulsion system we can calculate the mass ratio, which indicates the efficiency of the rocket engine.
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> mass_ratio = ariane_5[0][6] / ariane_5[0][5]
+>>> mass_ratio
+0.11960132890365449
+</p>
+</pre>
+</code>
+</div><br />
+<p>
+Lastly, we can calculate the propellant mass fraction using either initial and final mass of the propulsion system. We could also use the mass ratio we just calculated to achieve the same results.
+</p>
+<div id="code">
+<code>
+<pre>
+<p>
+>>> propellant_mass_fraction = (ariane_5[0][5]-ariane_5[0][6])/ariane_5[0][5]
+>>> propellant_mass_fraction
+0.8803986710963455
+</p>
+</pre>
+</code>
+</div><br />	
+<br /><br />
+<div class="date"><a href="../../../about.html">Johnathan Nicolosi</a> - 13 January 2019</div>
+</div>
+
+</div>	
+<div id="footer">
+<iframe src="../../../footer.html"  height="45px" width="100%" frameborder="0" scrolling="no" ></iframe>
+</div></div>
+</body></html>
